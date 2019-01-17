@@ -1,0 +1,224 @@
+/*@import url(//db.onlinewebfonts.com/c/0269f717557cb1defe0fb4055be31939?family=DIN+Condensed);*/
+
+body{
+    /*background-color: lightgrey;*/
+}
+
+#tableCommonInfo td, #tableStatInfo td{
+    border: none;
+}
+
+#tableCommonInfo td:first-child, #tableStatInfo td:first-child{
+    font-weight: bolder;
+}
+
+.containerWrapper{
+    background: aliceblue;
+}
+
+#searchBar{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#searchBtn{
+    background-color: #1657e7;
+}
+
+#searchBtn:hover{
+    background-color: white;
+    color:#1657e7;
+    font-weight: bolder;
+}
+
+.playerTable{
+    border-spacing: 0;
+    margin: 5px;
+    width: 80%;
+
+
+}
+
+#playerRow{
+    padding: 10px;
+}
+
+#table_tr_players{
+    text-align: left;
+
+}
+
+.playerLine:hover{
+
+    color: #1657e7;
+
+
+}
+
+.playerLine{
+    padding: 2px;
+}
+
+.text-muted{
+    background: black;
+    padding: 3rem 0;
+    color: white;
+}
+
+footer{
+    /*position: absolute;*/
+    bottom: 0;
+    width: 100%;
+}
+
+/*player card image css*/
+
+#playerCard{
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+#playerCardHolder{
+    background-repeat: no-repeat;
+    min-height: 400px;
+    margin: auto;
+}
+
+#playerImageShot{
+    top:  30px;
+    height: 250px;
+    position: relative;
+    margin: auto;
+    display: block
+}
+
+#playerName{
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    color: #ebcd5b;
+    font-family: "-DINPro-Cond-Bold",Arial,sans-serif !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    top: -45px;
+}
+#playerRating{
+    position: relative;
+    color: #ebcd5b;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    right: 70px;
+    top: -240px;
+    text-align: center;
+}
+
+#playerPosition{
+    position: relative;
+    color: #ebcd5b;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    right: 70px;
+    top: -255px;
+    text-align: center
+}
+
+.regularLine{
+    background: #e1c775;
+}
+
+#bigHorizontalLine{
+    position: relative;
+    height: 1px;
+    width: 160px;
+    bottom: 130px;
+    margin: auto;
+}
+
+#smallHorizontalLine{
+    position: relative;
+    height: 1px;
+    width: 30px;
+    bottom: 50px;
+    margin: auto;
+}
+
+#verticalLine{
+    position: relative;
+    height: 60px;
+    width: 1px;
+    margin: auto;
+    bottom: 120px;
+}
+
+.playerStat{
+    color: #e1c775;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+}
+
+#playerStatLeftLine{
+    position: relative;
+    bottom: 188px;
+    text-align: right;
+}
+
+#playerstatRightLine{
+    position: relative;
+    bottom: 188px;
+    /*padding-left: 65px;*/
+}
+
+
+
+/*player info*/
+
+#tableCommonInfo, #tableStatInfo{
+    font-size: 12px;
+}
+
+.tableValueRight{
+    text-align: right;
+}
+
+#playerNameHeader{
+    margin: auto;
+    padding-bottom: 10px;
+
+}
+
+.statHeader{
+    padding: 10px 0px 0px 0px;
+}
+.statTable{
+    width: 100%;
+}
+
+.statHeader .statTable td{
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.statTable td{
+    padding-top: 5px;
+    font-size: 12px;
+
+}
+.statTable tr td:nth-child(2){
+    text-align: right;
+}
+
+.progressStat{
+    height: 0.5rem !important;
+}
+
+#statsFirstRow{
+    padding-bottom: 10px;
+}
+.playerDigit{
+    font-weight: bolder;
+}

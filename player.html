@@ -1,0 +1,423 @@
+
+<!--<!DOCTYPE html>-->
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FUT Dani - Player</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="background-color: #1657e7 !important;">
+    <a class="navbar-brand" href="#">
+        <img src="img/ea_sports_logo.png" height=50 class="d-inline-block align-top" alt="">
+    </a>
+    <a class="navbar-brand" href="#" style="font-weight: bold">FUT19</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Players
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" onclick="filterPosition('&position=LF,CF,RF,ST,LW,RW');">Attackers</a>
+                    <a class="dropdown-item" onclick="filterPosition('&position=LM,CAM,CDM,CM,RM');">Midfielders</a>
+                    <a class="dropdown-item" onclick="filterPosition('&position=LWB,LB,CB,RB,RWB');">Defenders</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Squad Builder</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Streams</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+<!-- Begin page content -->
+<div class="containerWrapper">
+<div class="container" id="searchBar">
+    <form class="form-inline" style="width: 80%; margin: auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search for FUT19 player" aria-label="Search" style="width: 80%">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit" id="searchBtn">Search</button>
+    </form>
+</div>
+</div>
+<div class="mainContainer">
+<main role="main" class="container" id="playerCard">
+
+    <div class="row" id="playerRow">
+
+    <div class="col-12 col-md-6" id="playerStats">
+
+    </div>
+
+        <div class="col-12 col-md-6" id="playerCardIn">
+            <div class="row">
+                <h1 id="playerNameHeader"></h1>
+            </div>
+            <div class="row">
+            <div class="col-md-6">  <table class="table" id="tableCommonInfo">
+                <tbody>
+                <tr>
+                    <td>Full Name</td>
+                    <td id="playerFullName" class="tableValueRight"></td>
+                </tr>
+
+
+                <tr>
+                    <td>Nation</td>
+                    <td id="playerNation" class="tableValueRight"></td>
+
+                </tr>
+                <tr>
+                    <td>Club</td>
+                    <td id="playerClub" class="tableValueRight"></td>
+
+                </tr>
+                <tr>
+                    <td>League</td>
+                    <td id="playerLeague" class="tableValueRight"></td>
+                </tr>
+
+                <tr>
+                    <td>Weight</td>
+                    <td id="playerWeigth" class="tableValueRight"></td>
+                </tr>
+
+                <tr>
+                    <td>Height</td>
+                    <td id="playerHeight" class="tableValueRight"></td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="col-md-6">  <table class="table" id="tableStatInfo">
+                <tbody>
+                <tr>
+                    <td>Type</td>
+                    <td id="playerType" class="tableValueRight">TOTY</td>
+                </tr>
+
+
+                <tr>
+                    <td>Strong Foot</td>
+                    <td id="playerStrongFoot" class="tableValueRight"></td>
+
+                </tr>
+                <tr>
+                    <td>Weak Foot</td>
+                    <td id="playerWeakFoot" class="tableValueRight"></td>
+
+                </tr>
+                <tr>
+                    <td>Skills</td>
+                    <td id="playerSkills" class="tableValueRight"></td>
+                </tr>
+
+                <tr>
+                    <td>Attack WR.</td>
+                    <td id="playerAtWR" class="tableValueRight"></td>
+                </tr>
+
+                <tr>
+                    <td>Defense WR.</td>
+                    <td id="playerDefWR" class="tableValueRight"></td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+</div>
+<div class="containerWrapper" style="padding-bottom: 10px">
+    <div class="container">
+        <div class="row" id="statsFirstRow">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="statHeader">
+                    <table class="statTable">
+                        <tbody>
+                        <tr>
+                            <td>Pace</td>
+                            <td id="playerPAC"  class="playerDigit">99</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="progress progressStat">
+                    <div class="progress-bar bg-success" id=progressPAC role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <table class="statTable">
+
+                    <tbody>
+                    <tr>
+                        <td>Acceleration</td>
+                        <td id="playerAcceleration" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Sprint Speed</td>
+                        <td id="playerSprintSpeed" class="playerDigit">87</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="statHeader">
+                    <table class="statTable">
+                        <tbody>
+                        <tr>
+                            <td>Shooting</td>
+                            <td id="playerSHO"  class="playerDigit">99</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="progress progressStat">
+                    <div class="progress-bar bg-success" id="progressSHO" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <table class="statTable">
+
+                    <tbody>
+                    <tr>
+                        <td>Positioning</td>
+                        <td id="playerPositioning" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Finishing</td>
+                        <td id="playerFinishing" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Shot Power</td>
+                        <td id="playerShotPower" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Long Shots</td>
+                        <td id="playerLongShots" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Volleys</td>
+                        <td id="playerVolleys" class="playerDigit">87</td>
+                    </tr>
+                    <tr>
+                        <td>Penalties</td>
+                        <td id="playerPenalties" class="playerDigit">94</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="statHeader">
+                    <table class="statTable">
+                        <tbody>
+                        <tr>
+                            <td >Passing</td>
+                            <td id="playerPAS" class="playerDigit">91</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="progress progressStat">
+                    <div class="progress-bar bg-success" id="progressPAS" role="progressbar" style="width: 70%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <table class="statTable">
+
+                    <tbody>
+
+                    <tr>
+                        <td>Vision</td>
+                        <td id="playerVision" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Crossing</td>
+                        <td id="playerCrossing" class="playerDigit">90</td>
+                    </tr
+                    <tr>
+                        <td>FK. Accuracy</td>
+                        <td id="playerFKAccuracy" class="playerDigit">90</td>
+                    </tr><tr>
+                        <td>Short Passing</td>
+                        <td id="playerShortPassing" class="playerDigit">90</td>
+                    </tr><tr>
+                        <td>Long Passing</td>
+                        <td id="playerLongPassing" class="playerDigit">80</td>
+                    </tr>
+
+                    <tr>
+                        <td>Curve</td>
+                        <td id="playerCurve"  class="playerDigit">87</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="statHeader">
+                    <table class="statTable">
+                        <tbody>
+                        <tr>
+                            <td>Dribbling</td>
+                            <td id="playerDRI" class="playerDigit">80</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="progress progressStat">
+                    <div class="progress-bar bg-success" id="progressDRI" role="progressbar" style="width: 50%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <table class="statTable">
+
+                    <tbody>
+                    <tr>
+                        <td>Agility</td>
+                        <td id="playerAgility" class="playerDigit" >90</td>
+                    </tr>
+                    <tr>
+                        <td>Balance</td>
+                        <td id="playerBalance" class="playerDigit">87</td>
+                    </tr>
+                    <tr>
+                        <td>Reactions</td>
+                        <td id="playerReactions" class="playerDigit">87</td>
+                    </tr>
+                    <tr>
+                        <td>Ball Control</td>
+                        <td id="playerBallControl" class="playerDigit">87</td>
+                    </tr>
+                    <tr>
+                        <td>Dribbling</td>
+                        <td id="playerDribbling" class="playerDigit">87</td>
+                    </tr>
+                    <tr>
+                        <td>Composure</td>
+                        <td id="playerComposure" class="playerDigit">87</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="statHeader">
+                    <table class="statTable">
+                        <tbody>
+                        <tr>
+                            <td>Defending</td>
+                            <td id="playerDEF" class="playerDigit">70</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="progress progressStat">
+                    <div class="progress-bar bg-success" role="progressbar" id="progressDEF" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <table class="statTable">
+
+                    <tbody>
+                    <tr>
+                        <td>Interceptions</td>
+                        <td id="playerInterceptions" class="playerDigit">80</td>
+                    </tr>
+                    <tr>
+                        <td>Heading Accuracy</td>
+                        <td id="playerHeadingAccuracy" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Marking</td>
+                        <td id="playerMarking" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Standing Tackle</td>
+                        <td id="playerStandingTackle" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Sliding Tackle</td>
+                        <td id="playerSlidingTackle" class="playerDigit">87</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="statHeader">
+                    <table class="statTable">
+                        <tbody>
+                        <tr>
+                            <td >Physicality</td>
+                            <td id="playerPHY" class="playerDigit">94</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="progress progressStat">
+                    <div class="progress-bar bg-success" role="progressbar" id="progressPHY" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <table class="statTable">
+
+                    <tbody>
+
+                    <tr>
+                        <td>Jumping</td>
+                        <td id="playerJumping" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Stamina</td>
+                        <td id="playerStamina" class="playerDigit">90</td>
+                    </tr>
+                    <tr>
+                        <td>Strength</td>
+                        <td id="playerStrength" class="playerDigit">90</td>
+                    </tr><tr>
+                        <td>Agression</td>
+                        <td id="playerAgression" class="playerDigit">90</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--<footer class="text-muted">-->
+    <!--<div class="container">-->
+        <!--<p class="float-right">-->
+            <!--<a href="#">Back to top</a>-->
+        <!--</p>-->
+        <!--<p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>-->
+        <!--<p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>-->
+    <!--</div>-->
+<!--</footer>-->
+<script src="js/playerAPI.js"></script>
+
+
+<script>
+makeCorsRequest();
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+</body>
+</html>

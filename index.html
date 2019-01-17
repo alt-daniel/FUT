@@ -1,0 +1,87 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FUT Dani</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="background-color: #1657e7 !important;">
+    <a class="navbar-brand" href="#">
+        <img src="img/ea_sports_logo.png" height=50 class="d-inline-block align-top" alt="">
+    </a>
+    <a class="navbar-brand" href="#" style="font-weight: bold">FUT19</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Players
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" onclick="filterPosition('&position=LF,CF,RF,ST,LW,RW');">Attackers</a>
+                    <a class="dropdown-item" onclick="filterPosition('&position=LM,CAM,CDM,CM,RM');">Midfielders</a>
+                    <a class="dropdown-item" onclick="filterPosition('&position=LWB,LB,CB,RB,RWB');">Defenders</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Squad Builder</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Streams</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+<div class="content">
+<div class="container" style="padding-top: 5em">
+
+    <div id="testObject"></div>
+</div>
+
+
+
+
+
+</div>
+
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+    </div>
+</footer>
+<script src="js/futApi.js"></script>
+
+<script>
+    makeCorsRequest();
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
